@@ -1,77 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launching Soon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toute</title>
+  
+  <!-- Tailwind CSS v4 -->
+  <script src="./tailwindcss.js"></script>
+  
+  <!-- Iconify Web Component -->
+  <script src="./iconify-icon.min.js"></script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+      color: #2d3427;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #F8F6F4;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
 
-        body {
-            background-color: #FDEEF4; /* Soft pearl */
-            color: #2E4A3B;
-            font-family: "Inter", sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 2rem;
-        }
+    .font-serif {
+      font-family: "Cormorant Garamond", serif;
+    }
 
-        .container {
-            max-width: 700px;
-        }
+    .glass-effect {
+      background: rgba(237, 234, 229, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(167, 243, 208, 1);
+    }
 
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            margin-bottom: 1.5rem;
-        }
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(248, 246, 244, 0.7) 0%, rgba(236, 253, 245, 0.4) 50%, rgba(248, 246, 244, 1) 100%);
+    }
 
-        .divider {
-            width: 80px;
-            height: 3px;
-            background-color: #8FAE7E;
-            margin: 0 auto 2rem;
-            border-radius: 2px;
-        }
+    .text-balance {
+      text-wrap: balance;
+    }
 
-        p {
-            font-size: clamp(1.05rem, 2vw, 1.35rem);
-            font-weight: 300;
-            line-height: 1.7;
-            color: #496254;
-        }
+    input::placeholder {
+      color: #6D665D;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      opacity: 0.8;
+    }
 
-        @media (max-width: 600px) {
-            h1 {
-                letter-spacing: 0.08em;
-            }
-        }
-    </style>
+    button {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .leaf-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    .bg-blur-green {
+      background: rgba(167, 243, 208, 0.5);
+      filter: blur(40px);
+    }
+    
+    .bg-blur-yellow {
+      background: rgba(254, 243, 199, 0.6);
+      filter: blur(40px);
+    }
+
+    .bg-blur-teal {
+      background: rgba(204, 251, 241, 0.5);
+      filter: blur(64px);
+    }
+  </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
-    <main class="container">
-        <h1>LAUNCHING SOON!</h1>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full bg-[#F8F6F4]/95 backdrop-blur-md border-b border-[#D7D1CA]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo Section -->
+      <div class="flex items-center gap-3">
+        <!-- <div class="w-9 h-9 bg-[#3A643C] rounded-xl flex items-center justify-center shadow-sm">
+          <img src="./assets/IMG_1.svg" alt="Leaf" class="w-5 h-5 text-[#EEFBEE]">
+        </div> -->
+        <div class="flex flex-col">
+          <span class="font-['Plus_Jakarta_Sans'] font-bold text-xl leading-none text-[#231E18]">Toute</span>
+        </div>
+        
+    </div>
+  </header>
 
-        <div class="divider"></div>
+  <!-- Main Content -->
+  <main class="flex-1 flex items-center justify-center relative overflow-hidden">
+    <!-- Hero Background Elements -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-[-48px] left-[40px] w-72 h-72 bg-blur-green rounded-[40px_60px_70px_30px]"></div>
+      <div class="absolute top-[99px] right-[-100px] w-80 h-80 bg-blur-yellow rounded-[60px_40px_30px_70px]"></div>
+      <div class="absolute top-[194px] left-1/2 -translate-x-1/2 w-96 h-96 bg-blur-teal rounded-[50px_50px_40px_60px]"></div>
+      
+      <!-- Background Pattern/Image -->
+      <div class="absolute inset-0 opacity-[0.35] pointer-events-none">
+        <img src="./assets/IMG_3.webp" alt="" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute inset-0 hero-gradient"></div>
 
-        <p>
-            Simple solutions in sustainability and product management.
-        </p>
-    </main>
+      <!-- Floating Icons -->
+      <img src="./assets/IMG_4.svg" alt="" class="absolute top-[10%] left-[25%] w-8 h-8 opacity-40 rotate-12 leaf-float">
+      <img src="./assets/IMG_1.svg" alt="" class="absolute top-[50%] left-[5%] w-6 h-6 opacity-40 rotate-45 leaf-float" style="animation-delay: 1s;">
+      <img src="./assets/IMG_1.svg" alt="" class="absolute bottom-[20%] right-[25%] w-10 h-10 opacity-40 -rotate-12 leaf-float" style="animation-delay: 2s;">
+    </div>
+
+    <!-- Hero Content -->
+    <section class="w-full max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
+      <!-- Badge -->
+      
+
+      <!-- Heading -->
+      <h1 class="text-5xl md:text-7xl lg:text-[72px] leading-tight md:leading-[72px] text-[#231E18] mb-6 tracking-tighter">
+        LAUNCHING SOON!
+      </h1>
+
+      <!-- Subheading -->
+      <p class="text-lg md:text-xl text-[#6D665D] font-medium mb-12 max-w-2xl font-['Plus_Jakarta_Sans']">
+        Simple solutions in sustainability and product management.
+      </p>
+
+     
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#EDEAE5] border-t border-[#D7D1CA]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <!-- Top Footer Row -->
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-10">
+        <div class="flex items-start gap-4 max-w-2xl">
+          
+          <p class="text-sm leading-relaxed text-[#6D665D] font-['Plus_Jakarta_Sans']">
+            <span class="font-semibold text-[#231E18]">Toute /tut/:</span> 
+            Creating simple, conscious solutions designed to leave a lighter footprint on our planet.
+          </p>
+        </div>
+
+        
+    </div>
+  </footer>
 
 </body>
 </html>
